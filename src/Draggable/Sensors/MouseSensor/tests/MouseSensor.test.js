@@ -125,19 +125,7 @@ describe('MouseSensor', () => {
         releaseMouse(document.body);
       }
 
-      function dragFlowWithCtrlKey() {
-        clickMouse(draggableElement, {ctrlKey: true});
-        waitForDragDelay();
-        releaseMouse(document.body);
-      }
-
-      function dragFlowWithMetaKey() {
-        clickMouse(draggableElement, {metaKey: true});
-        waitForDragDelay();
-        releaseMouse(document.body);
-      }
-
-      [dragFlowWithRightClick, dragFlowWithCtrlKey, dragFlowWithMetaKey].forEach((dragFlow) => {
+      [dragFlowWithRightClick].forEach((dragFlow) => {
         expect(dragFlow).not.toHaveTriggeredSensorEvent('drag:start');
       });
     });

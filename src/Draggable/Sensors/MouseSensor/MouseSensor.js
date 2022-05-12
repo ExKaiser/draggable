@@ -74,7 +74,7 @@ export default class MouseSensor extends Sensor {
    * @param {Event} event - Mouse down event
    */
   [onMouseDown](event) {
-    if (event.button !== 0 || event.ctrlKey || event.metaKey) {
+    if (event.button !== 0) {
       return;
     }
     const container = closest(event.target, this.containers);
